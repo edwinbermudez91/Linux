@@ -297,6 +297,7 @@ Buscar:
 - Key Size
 - Validity
 
+## Alternativa para crear rapidamente
 
 **Generar clave + CSR (para que una CA lo firme)**
 ```
