@@ -135,6 +135,12 @@ openssl req -new \
     -subj "/CN=localhost"
 ```
 
+validar CSR generado
+
+```bash
+openssl req -in server/server.csr -text -noout
+```
+
 ✍️ 3️⃣ Firmar con tu CA
 
 ```bash
