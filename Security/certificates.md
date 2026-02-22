@@ -167,8 +167,8 @@ openssl x509 -in server/server.crt -text -noout
 mkdir app
 ```
 
-```python
-cat < EOF >> app/server.py
+```bash
+cat << 'EOF' >> app/server.py
 import http.server
 import ssl
 
