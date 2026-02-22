@@ -297,19 +297,36 @@ Buscar:
 - Key Size
 - Validity
 
-## Alternativa para crear rapidamente
+## 🔐 Alternativas rápidas con OpenSSL
 
-**Generar clave + CSR (para que una CA lo firme)**
+**1️⃣ Generar clave privada + CSR (para que lo firme una CA)**
+
 ```
 openssl req -newkey rsa:4096 -keyout priv.key -out cert.csr
 ```
-**Verificar certificado**
+
+🔎 Esto genera:
+
+priv.key → clave privada
+
+cert.csr → Certificate Signing Request (para enviarlo a una CA)
+
+**2️⃣ Verificar un certificado existente**
 
 ```
 openssl x509 -in server.crt -text -noout
 ```
 
-**Generar certificado con SAN (Subject Alternative Name)**
+Muestra:
+
+- Subject
+- Issuer
+- Fechas de validez
+- SAN
+- Algoritmo de firma
+
+
+**3️⃣ Generar CSR con SAN (Subject Alternative Name)**
 
 ```
 openssl req -newkey rsa:4096 -nodes \
@@ -318,10 +335,33 @@ openssl req -newkey rsa:4096 -nodes \
     -subj "/CN=midominio.com" \
     -addext "subjectAltName=DNS:midominio.com,DNS:www.midominio.com"
 ```
+📌 Importante: Hoy en día los navegadores validan el SAN, no solo el CN.
 
-
-**Generar clave + certificado autofirmado (para pruebas)**
+4️⃣ Generar clave + certificado autofirmado (para pruebas)
 
 ```bash
 openssl req -x509 -newkey rsa:2048 -keyout server.key -out server.crt -days 365 -nodes
 ```
+
+Genera:
+
+- server.key → clave privada
+- server.crt → certificado autofirmado válido por 365 días
+
+Ideal para:
+
+- Laboratorios
+- Desarrollo local
+- Pruebas en Kubernetes / Docker
+
+**🚀 Extra PRO: Autofirmado con SAN en un solo comando**
+
+```bash
+openssl req -x509 -newkey rsa:2048 -nodes \
+    -keyout server.key \
+    -out server.crt \
+    -days 365 \
+    -subj "/CN=midominio.com" \
+    -addext "subjectAltName=DNS:midominio.com,DNS:www.midominio.com"
+```
+
