@@ -156,12 +156,16 @@ openssl x509 -req \
 validar certificado
 
 ```bash
-openssl x509 -in server/server.crt -text -noout
+openssl x509 -in server/server.crt -text -noout.0
 ```
 
 ### 🧪 EJERCICIO 3 – Levantar servidor HTTPS con Python
 
 🖥️ 1️⃣ Crear archivo app/server.py
+
+```bash
+mkdir app && touch server.py
+```
 
 ```python
 import http.server
