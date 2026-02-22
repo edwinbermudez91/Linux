@@ -228,6 +228,13 @@ ss -tulnp | grep 8443
 
 🔍 Ver proceso escuchando
 
+En caso de no tener instalado lsof en Debian / Ubuntu, ejecutar el siguiente comando:
+ 
+```bash
+sudo apt update
+sudo apt install lsof -y
+```
+
 ```bash
 lsof -i :8443
 ```
