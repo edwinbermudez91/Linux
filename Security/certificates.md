@@ -112,6 +112,12 @@ openssl req -x509 -new -nodes \
 -subj "/CN=Linux-CA"
 ```
 
+Validar certificado
+
+```bash
+openssl x509 -in ca/ca.crt -text -noout
+```
+
 ### 🧪 EJERCICIO 2 – Crear certificado del servidor
 
 🔐 1️⃣ Generar clave privada del servidor
