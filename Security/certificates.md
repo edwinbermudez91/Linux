@@ -307,9 +307,8 @@ openssl req -newkey rsa:4096 -keyout priv.key -out cert.csr
 
 🔎 Esto genera:
 
-priv.key → clave privada
-
-cert.csr → Certificate Signing Request (para enviarlo a una CA)
+- priv.key → clave privada
+- cert.csr → Certificate Signing Request (para enviarlo a una CA)
 
 **2️⃣ Verificar un certificado existente**
 
