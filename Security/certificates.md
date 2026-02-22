@@ -164,10 +164,11 @@ openssl x509 -in server/server.crt -text -noout.0
 🖥️ 1️⃣ Crear archivo app/server.py
 
 ```bash
-mkdir app && touch server.py
+mkdir app
 ```
 
 ```python
+cat < EOF >> app/server.py
 import http.server
 import ssl
 
@@ -189,7 +190,7 @@ httpd.socket = context.wrap_socket(httpd.socket, server_side=True)
 
 print(f"Servidor HTTPS corriendo en https://{HOST}:{PORT}")
 httpd.serve_forever()
-
+EOF
 ```
 
 ▶️ 2️⃣ Ejecutar servidor
