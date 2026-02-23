@@ -79,6 +79,7 @@ Ambos usan cifrado simétrico para la sesión.
 
 **📂 Estructura del repo**
 
+```codigo
 linux-tls-lab/
 │
 ├── ca/
@@ -91,7 +92,7 @@ linux-tls-lab/
 │   ├── server.crt
 │
 └── README.md
-
+```
 
 ### 🧪 EJERCICIO 1 – Crear tu propia CA
 
