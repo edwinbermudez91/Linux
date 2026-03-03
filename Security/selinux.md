@@ -13,7 +13,7 @@ Si dice command not found, no está instalado.
 
 ```bash
 sudo apt update
-sudo apt install selinux selinux-utils selinux-basics auditd -y
+sudo apt install selinux-utils selinux-basics auditd -y
 ```
 
 ## ⚙️ 3️⃣ Activar SELinux
