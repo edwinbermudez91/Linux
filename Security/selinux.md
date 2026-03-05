@@ -25,7 +25,7 @@ sudo selinux-activate
 Reiniciar el sistema:
 
 ```bash
-sudo reboot
+sudo systemctl reboot
 ```
 
 ## ✅ 4️⃣ Verificar estado después del reinicio
