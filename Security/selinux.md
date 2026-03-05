@@ -34,6 +34,23 @@ sudo systemctl reboot
 sestatus
 ```
 
+**validar logs**
+
+```bash
+sudo audit2why --all |less
+```
+
+Revisar eventos SELinux denegados
+```bash
+sudo ausearch -m AVC,USER_AVC -ts recent
+```
+
+📄 Revisar directamente el log de auditoría
+```bash
+sudo less /var/log/audit/audit.log
+```
+
+
 ## 🔒 5️⃣ Cambiar a modo Enforcing
 
 ```bash
