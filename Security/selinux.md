@@ -188,7 +188,7 @@ Esto permite que el proceso SSH lea archivos en un directorio específico que an
 4. Instalar el módulo de política generado
 
 ```bash
-semodule -i mymodule.pp
+sudo semodule -i mymodule.pp
 ```
 
 Este comando instala el módulo generado dentro de la política activa de SELinux.
@@ -201,7 +201,7 @@ Después de instalarlo:
 Para verificar los módulos instalados:
 
 ```bash
-semodule -l
+sudo semodule -l
 ```
 
 5. Activar modo Enforcing en SELinux
