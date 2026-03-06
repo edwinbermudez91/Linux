@@ -218,6 +218,19 @@ Para verificar el estado actual:
 sestatus
 ```
 
+reiniciar para que tome los cambios
+
+```bash
+sudo systemctl reboot
+```
+
+Validar el estado
+
+```bash
+sestatus
+```
+
+---
 Activar de forma permanente
 
 ```bash
@@ -250,4 +263,10 @@ validar el cambio ejecutado
 ```bash
 cat /etc/selinux/config
 grep -v ^# /etc/selinux/config
+```
+
+reiniciar para que tome los cambios
+
+```bash
+sudo systemctl reboot
 ```
