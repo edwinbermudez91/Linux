@@ -207,7 +207,7 @@ sudo semodule -l
 5. Activar modo Enforcing en SELinux
 
 ```bash
-setenforce 1
+sudo setenforce 1
 ```
 
 El comando setenforce 1 activa el modo Enforcing, donde las políticas se aplican estrictamente.
@@ -216,4 +216,38 @@ Para verificar el estado actual:
 
 ```bash
 sestatus
+```
+
+Activar de forma permanente
+
+```bash
+sudo vim /etc/selinux/config
+```
+
+cambiar el modo
+
+```bash
+SELINUX=permissive
+```
+por 
+
+```bash
+SELINUX=enforcing
+```
+
+o de forma directa
+
+```bash
+sudo sed -i 's/^SELINUX=enforcing/SELINUX=permissive/' /etc/selinux/config
+```
+
+```bash
+sudo sed -i 's/^SELINUX=permissive/SELINUX=enforcing/' /etc/selinux/config
+```
+
+validar el cambio ejecutado
+
+```bash
+cat /etc/selinux/config
+grep -v ^# /etc/selinux/config
 ```
