@@ -160,7 +160,7 @@ El tipo `sshd_exec_t` permite que, cuando el binario se ejecute, el proceso camb
 3. Analizar bloqueos de SELinux y generar un módulo de política
 
 ```bash
-sudo audit2why --all -M mymodule
+sudo audit2allow --all -M mymodule
 ```
 
 Este comando analiza los registros de auditoría del sistema para identificar bloqueos generados por SELinux y genera un módulo de política personalizado.
