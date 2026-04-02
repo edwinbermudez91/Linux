@@ -29,7 +29,7 @@
 | `SNAT` | Cambiar IP/puerto origen |
 | `MASQUERADE` | SNAT dinámico (ideal para IP dinámica) |
 
-##Orden de evaluación
+## Orden de evaluación
 
 Las reglas se evalúan de arriba hacia abajo. En cuanto una regla hace match, se ejecuta su target y se deja de evaluar el resto (a menos que el target sea `LOG`, que continúa). Por eso el orden importa mucho: las reglas más específicas deben ir antes que las generales.
 
